@@ -14,7 +14,8 @@
   <meta name="twitter:title" content="Timber Atelier — Made once. Kept for generations.">
   <meta name="twitter:description" content="Bespoke furniture and architectural timberwork, made one commission at a time in Ballito, South Africa.">
   <meta name="twitter:image" content="assets/table-hero.jpg">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23003135'/%3E%3Cpath d='M13 17h38v6H35v26h-6V23H13z' fill='%23c26a52'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,500&f[]=switzer@300,400,500,600&display=swap" rel="stylesheet">
@@ -181,18 +182,7 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 2rem;
-      height: 2rem;
-      border: 1px solid rgba(194, 106, 82, .6);
-      color: #c26a52;
-      font-family: var(--sans);
-      font-size: .58rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-    }
+    .brand-mark { display: block; width: auto; height: 2.4rem; }
     .main-nav { display: flex; align-items: center; gap: clamp(1.5rem, 3vw, 3rem); }
     .main-nav a {
       position: relative;
@@ -261,7 +251,7 @@
       .site-header { min-height: 64px; padding-inline: 1rem; }
       .site-header.is-scrolled { min-height: 60px; }
       .brand { gap: .65rem; font-size: .81rem; letter-spacing: .15em; }
-      .brand-mark { width: 1.8rem; height: 1.8rem; }
+      .brand-mark { height: 2.05rem; }
       .header-cta { min-height: 38px; padding: .62rem .9rem; }
       .header-cta .long { display: none; }
       .header-cta .short { display: inline; }
@@ -808,6 +798,7 @@
     .site-footer { border-top: 1px solid var(--line-light); background: var(--kiln); }
     .footer-main { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: clamp(3.5rem, 7vw, 6rem) 0; }
     .footer-brand { font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 4.5rem); font-weight: 300; line-height: 1; }
+    .footer-mark { display: block; width: clamp(3.2rem, 5vw, 4.4rem); height: auto; margin-bottom: 1.3rem; opacity: .95; }
     .footer-links { justify-self: end; display: grid; gap: .65rem; text-align: right; }
     .footer-links a { color: rgba(238, 247, 249, .68); font-size: .84rem; text-decoration-color: rgba(16, 173, 185, .55); text-underline-offset: 4px; }
     .footer-links a:hover { color: var(--chalk); }
@@ -889,7 +880,7 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" id="site-header">
     <a class="brand" href="#journey" aria-label="Timber Atelier, home">
-      <span class="brand-mark" aria-hidden="true">TA</span>
+      <img class="brand-mark" src="assets/logo-mark.png" alt="" width="512" height="512" fetchpriority="high">
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#work">Work</a>
@@ -1244,7 +1235,7 @@
 
   <footer class="site-footer">
     <div class="shell footer-main">
-      <p class="footer-brand">Timber <em style="color: var(--brass)">Atelier</em></p>
+      <p class="footer-brand"><img class="footer-mark" src="assets/logo-mark.png" alt="" width="512" height="512" loading="lazy" decoding="async">Timber <em style="color: var(--brass)">Atelier</em></p>
       <div class="footer-links">
         <a href="https://wa.me/27603881383" target="_blank" rel="noopener">WhatsApp the atelier</a>
         <a href="#commission">Start a commission</a>
