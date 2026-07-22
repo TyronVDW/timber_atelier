@@ -666,7 +666,13 @@
     .wood-use { color: rgba(238, 247, 249, .6); font-size: .87rem; line-height: 1.6; }
     .wood-toggle { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border: 1px solid rgba(238, 247, 249, .18); border-radius: 50%; color: var(--brass); font-size: 1rem; transition: transform .3s ease, background .3s ease; }
     .wood-row[open] .wood-toggle { background: rgba(16, 173, 185, .12); transform: rotate(45deg); }
-    .wood-detail { display: grid; grid-template-columns: 3rem .7fr 1fr auto; gap: clamp(1rem, 3vw, 3rem); padding: 0 0 1.7rem; }
+    .wood-detail { display: grid; grid-template-columns: 3rem minmax(16rem, .7fr) minmax(16rem, 1fr) auto; gap: clamp(1rem, 3vw, 3rem); align-items: center; padding: 0 0 1.7rem; }
+    .wood-board { position: relative; grid-column: 2; aspect-ratio: 16 / 7; overflow: hidden; border: 1px solid rgba(238, 247, 249, .14); background: #18383a; }
+    .wood-board img { width: 100%; height: 100%; object-fit: cover; }
+    .wood-board figcaption { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; gap: 1rem; padding: 1.8rem .75rem .65rem; background: linear-gradient(to top, rgba(0, 31, 34, .88), transparent); color: rgba(238, 247, 249, .72); font-size: .56rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+    .wood-board figcaption span:last-child { color: rgba(238, 247, 249, .48); }
+    .wood-palette { grid-column: 2; display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+    .wood-palette .wood-board { grid-column: auto; aspect-ratio: 16 / 9; }
     .wood-detail p { grid-column: 3; max-width: 55ch; color: rgba(238, 247, 249, .62); font-size: .9rem; line-height: 1.75; }
     .wood-detail b { color: var(--sage); font-weight: 500; }
     .wood-note { margin-top: 1.6rem; max-width: 65ch; color: rgba(238, 247, 249, .52); font-size: .82rem; line-height: 1.75; }
@@ -675,6 +681,10 @@
       .wood-use { display: none; }
       .wood-title span { max-width: 30ch; line-height: 1.5; }
       .wood-detail { display: block; padding: 0 2.75rem 1.5rem; }
+      .wood-board { margin-bottom: 1rem; aspect-ratio: 16 / 8; }
+      .wood-board figcaption { padding-inline: .65rem; font-size: .5rem; }
+      .wood-palette { grid-template-columns: 1fr; gap: .65rem; margin-bottom: 1rem; }
+      .wood-palette .wood-board { margin-bottom: 0; aspect-ratio: 16 / 8; }
       .wood-detail p { font-size: .85rem; }
     }
 
@@ -1087,7 +1097,13 @@
               <span class="wood-use">Warm, open grain that deepens to amber-brown.</span>
               <span class="wood-toggle" aria-hidden="true">+</span>
             </summary>
-            <div class="wood-detail"><p>Beautifully workable and naturally composed, kiaat is at home in dining tables, doors and pieces made for coastal living. <b>Best for:</b> tables, doors, outdoor pieces.</p></div>
+            <div class="wood-detail">
+              <figure class="wood-board">
+                <img src="assets/woods/kiaat.jpg" alt="Finished live-edge kiaat boards showing warm amber-brown longitudinal grain" width="1024" height="576" loading="eager" decoding="async">
+                <figcaption><span>Kiaat · finished-board reference</span><span>Natural boards vary</span></figcaption>
+              </figure>
+              <p>Beautifully workable and naturally composed, kiaat is at home in dining tables, doors and pieces made for coastal living. <b>Best for:</b> tables, doors, outdoor pieces.</p>
+            </div>
           </details>
           <details class="wood-row">
             <summary>
@@ -1096,7 +1112,13 @@
               <span class="wood-use">Pale gold, fine and quietly luminous.</span>
               <span class="wood-toggle" aria-hidden="true">+</span>
             </summary>
-            <div class="wood-detail"><p>The timber of Cape heirlooms has a calm, refined figure. We use reclaimed and licensed stock only. <b>Best for:</b> heirloom tables, panelling, restoration.</p></div>
+            <div class="wood-detail">
+              <figure class="wood-board">
+                <img src="assets/woods/yellowwood.jpg" alt="Finished live-edge yellowwood board showing pale honey-gold fine grain" width="1024" height="576" loading="eager" decoding="async">
+                <figcaption><span>Yellowwood · finished-board reference</span><span>Natural boards vary</span></figcaption>
+              </figure>
+              <p>The timber of Cape heirlooms has a calm, refined figure. We use reclaimed and licensed stock only. <b>Best for:</b> heirloom tables, panelling, restoration.</p>
+            </div>
           </details>
           <details class="wood-row">
             <summary>
@@ -1105,7 +1127,13 @@
               <span class="wood-use">Smoky chocolate tones with expressive figure.</span>
               <span class="wood-toggle" aria-hidden="true">+</span>
             </summary>
-            <div class="wood-detail"><p>A classic of Natal furniture-making, rich without becoming loud and exceptionally suited to rooms with presence. <b>Best for:</b> boardroom tables, studies, statement pieces.</p></div>
+            <div class="wood-detail">
+              <figure class="wood-board">
+                <img src="assets/woods/imbuia.jpg" alt="Finished live-edge imbuia board showing smoky chocolate-brown expressive grain" width="1024" height="576" loading="eager" decoding="async">
+                <figcaption><span>Imbuia · finished-board reference</span><span>Natural boards vary</span></figcaption>
+              </figure>
+              <p>A classic of Natal furniture-making, rich without becoming loud and exceptionally suited to rooms with presence. <b>Best for:</b> boardroom tables, studies, statement pieces.</p>
+            </div>
           </details>
           <details class="wood-row">
             <summary>
@@ -1114,7 +1142,13 @@
               <span class="wood-use">Honest, structural and endlessly versatile.</span>
               <span class="wood-toggle" aria-hidden="true">+</span>
             </summary>
-            <div class="wood-detail"><p>French oak takes texture, fuming and liming beautifully while retaining a clear architectural grain. <b>Best for:</b> doors, panelling, framed construction.</p></div>
+            <div class="wood-detail">
+              <figure class="wood-board">
+                <img src="assets/woods/french-oak.jpg" alt="Finished live-edge French oak board showing pale biscuit-brown architectural grain" width="1024" height="576" loading="eager" decoding="async">
+                <figcaption><span>French oak · finished-board reference</span><span>Natural boards vary</span></figcaption>
+              </figure>
+              <p>French oak takes texture, fuming and liming beautifully while retaining a clear architectural grain. <b>Best for:</b> doors, panelling, framed construction.</p>
+            </div>
           </details>
           <details class="wood-row">
             <summary>
@@ -1123,7 +1157,27 @@
               <span class="wood-use">A wider palette for colour, curve and climate.</span>
               <span class="wood-toggle" aria-hidden="true">+</span>
             </summary>
-            <div class="wood-detail"><p>From black walnut’s quiet depth to iroko’s coastal resilience and ash’s ability to bend, the material follows the work—not fashion. We also mill meaningful client-supplied trees where the timber is suitable.</p></div>
+            <div class="wood-detail">
+              <div class="wood-palette" aria-label="Finished-board references for black walnut, rosewood, iroko and ash">
+                <figure class="wood-board">
+                  <img src="assets/woods/walnut.jpg" alt="Finished live-edge black walnut board showing deep chocolate-brown flowing grain" width="1024" height="576" loading="eager" decoding="async">
+                  <figcaption><span>Black walnut</span></figcaption>
+                </figure>
+                <figure class="wood-board">
+                  <img src="assets/woods/rosewood.jpg" alt="Finished live-edge rosewood board showing rich purple-brown and golden streaked grain" width="1024" height="576" loading="eager" decoding="async">
+                  <figcaption><span>Rosewood</span></figcaption>
+                </figure>
+                <figure class="wood-board">
+                  <img src="assets/woods/iroko.jpg" alt="Finished live-edge iroko board showing warm golden caramel interlocked grain" width="1024" height="520" loading="eager" decoding="async">
+                  <figcaption><span>Iroko</span></figcaption>
+                </figure>
+                <figure class="wood-board">
+                  <img src="assets/woods/ash.jpg" alt="Finished live-edge ash board showing creamy pale open grain" width="1024" height="576" loading="eager" decoding="async">
+                  <figcaption><span>Ash</span></figcaption>
+                </figure>
+              </div>
+              <p>From black walnut’s quiet depth to iroko’s coastal resilience and ash’s ability to bend, the material follows the work—not fashion. We also mill meaningful client-supplied trees where the timber is suitable.</p>
+            </div>
           </details>
         </div>
         <p class="wood-note reveal">Species are sourced with their paperwork in order—licensed, plantation-grown or reclaimed. Availability changes, as it should with a natural material.</p>
