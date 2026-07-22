@@ -265,7 +265,6 @@
       .header-cta .long { display: none; }
       .header-cta .short { display: inline; }
     }
-    @media (max-width: 350px) { .brand-name { display: none; } }
 
     /* Scroll film */
     #journey { position: relative; height: 400svh; background: #000; }
@@ -314,6 +313,31 @@
       background: linear-gradient(to top, #080806 0%, rgba(8, 8, 6, .55) 35%, transparent 100%);
       opacity: var(--exit-fade, 0);
     }
+    .film-brand {
+      position: absolute;
+      top: max(5.6rem, 11.5svh);
+      left: 50%;
+      z-index: 4;
+      transform: translateX(-50%);
+      /* Leading pad balances the trailing letter-space so the mark centres optically. */
+      padding-inline-start: .32em;
+      color: var(--chalk);
+      font-family: var(--serif);
+      font-size: clamp(1.02rem, 2.3vw, 1.5rem);
+      font-weight: 400;
+      letter-spacing: .32em;
+      line-height: 1;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, .55), 0 6px 30px rgba(0, 0, 0, .6);
+      text-transform: uppercase;
+      white-space: nowrap;
+      pointer-events: none;
+      animation: film-brand-in 1.8s cubic-bezier(.22, .65, .2, 1) .2s both;
+    }
+    @keyframes film-brand-in {
+      from { opacity: 0; letter-spacing: .46em; }
+      to { opacity: 1; letter-spacing: .32em; }
+    }
+    @media (prefers-reduced-motion: reduce) { .film-brand { animation: none; } }
     .chapter {
       --chapter-opacity: 0;
       --chapter-y: 18px;
@@ -463,7 +487,7 @@
       .chapter-final .hero-actions { justify-content: center; }
       .hero-actions { justify-content: center; gap: .65rem; margin-top: 1.35rem; }
       .hero-actions .button { min-height: 48px; padding: .8rem 1.1rem; font-size: .61rem; }
-      .film-loader { top: 4.6rem; bottom: auto; left: 50%; transform: translateX(-50%); }
+      .film-loader { top: 8.6rem; bottom: auto; left: 50%; transform: translateX(-50%); }
     }
     @media (max-width: 359px), (max-height: 700px) and (max-width: 700px) {
       body { min-width: 0; }
@@ -488,6 +512,7 @@
       .hero-actions { gap: .6rem; margin-top: .8rem; }
       .hero-actions .button { min-height: 44px; padding: .75rem 1.1rem; font-size: .6rem; }
       .scroll-cue, .film-loader { display: none; }
+      .film-brand { top: 4.4rem; font-size: 1rem; }
     }
 
     /* Proof strip */
@@ -859,7 +884,6 @@
   <header class="site-header" id="site-header">
     <a class="brand" href="#journey" aria-label="Timber Atelier, home">
       <span class="brand-mark" aria-hidden="true">TA</span>
-      <span class="brand-name">Timber Atelier</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#work">Work</a>
@@ -888,6 +912,8 @@
           </video>
         </div>
         <div class="film-overlay" aria-hidden="true"></div>
+
+        <span class="film-brand">Timber Atelier</span>
 
         <div class="chapter chapter-intro" id="chapter-0">
           <span class="chapter-kicker">Bespoke woodwork · Ballito</span>
@@ -981,8 +1007,8 @@
 
         <figure class="case-hero reveal">
           <picture>
-            <source media="(max-width: 700px)" srcset="assets/table-hero-mobile.jpg">
-            <img src="assets/table-hero.jpg" alt="Bespoke oak and rosewood drafting table against a black background" width="2200" height="1188" loading="lazy" decoding="async">
+            <source media="(max-width: 700px)" srcset="assets/study01-hero-mobile.jpg">
+            <img src="assets/study01-hero.jpg" alt="Bespoke rosewood drafting table with a sculpted slatted base against a black background" width="2200" height="1420" loading="lazy" decoding="async">
           </picture>
           <figcaption class="case-label">One piece · Every angle considered</figcaption>
         </figure>
