@@ -321,12 +321,12 @@
       z-index: 4;
       transform: translateX(-50%);
       /* Leading pad balances the trailing letter-space so the mark centres optically. */
-      padding-inline-start: .32em;
+      padding-inline-start: .26em;
       color: var(--chalk);
       font-family: var(--serif);
-      font-size: clamp(1.1rem, 5.2vw, 2.1rem);
+      font-size: clamp(1.5rem, 7vw, 3.1rem);
       font-weight: 400;
-      letter-spacing: .32em;
+      letter-spacing: .26em;
       line-height: 1;
       text-shadow: 0 1px 3px rgba(0, 0, 0, .55), 0 6px 30px rgba(0, 0, 0, .6);
       text-transform: uppercase;
@@ -335,8 +335,8 @@
       animation: film-brand-in 1.8s cubic-bezier(.22, .65, .2, 1) .2s both;
     }
     @keyframes film-brand-in {
-      from { opacity: 0; letter-spacing: .46em; }
-      to { opacity: 1; letter-spacing: .32em; }
+      from { opacity: 0; letter-spacing: .38em; }
+      to { opacity: 1; letter-spacing: .26em; }
     }
     @media (prefers-reduced-motion: reduce) { .film-brand { animation: none; } }
     .chapter {
@@ -513,7 +513,7 @@
       .hero-actions { gap: .6rem; margin-top: .8rem; }
       .hero-actions .button { min-height: 44px; padding: .75rem 1.1rem; font-size: .6rem; }
       .scroll-cue, .film-loader { display: none; }
-      .film-brand { top: 4.4rem; font-size: 1.3rem; }
+      .film-brand { top: 4.4rem; font-size: 1.55rem; }
     }
 
     /* Proof strip */
