@@ -472,6 +472,9 @@
       .stage { min-height: 0; }
       /* The table sits ~2.8% left of centre inside the video frame; nudge right to optically centre it. */
       .film-media picture img, .film-media video { object-fit: contain; object-position: center 30%; transform: translateX(2.8%); }
+      /* Centre the wordmark between the nav (~64px) and the table's top edge:
+         video top = 30% of (100svh - 80vw), table starts 18.9% into the 80vw-tall frame. */
+      .film-brand { top: max(4.35rem, calc(32px + 15svh - 4.44vw - .5em)); }
       .film-overlay {
         background: linear-gradient(180deg, rgba(0, 0, 0, .36) 0%, transparent 18%, transparent 52%, rgba(0, 0, 0, .55) 76%, rgba(0, 0, 0, .85) 100%);
       }
@@ -513,7 +516,7 @@
       .hero-actions { gap: .6rem; margin-top: .8rem; }
       .hero-actions .button { min-height: 44px; padding: .75rem 1.1rem; font-size: .6rem; }
       .scroll-cue, .film-loader { display: none; }
-      .film-brand { top: 4.4rem; font-size: 1.55rem; }
+      .film-brand { top: max(4.15rem, calc(32px + 13svh - 2.84vw - .5em)); font-size: 1.55rem; }
     }
 
     /* Proof strip */
