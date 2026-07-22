@@ -445,7 +445,8 @@
     @media (max-width: 700px) {
       #journey { height: 360svh; }
       .stage { min-height: 0; }
-      .film-media picture img, .film-media video { object-fit: contain; object-position: center 30%; }
+      /* The table sits ~2.8% left of centre inside the video frame; nudge right to optically centre it. */
+      .film-media picture img, .film-media video { object-fit: contain; object-position: center 30%; transform: translateX(2.8%); }
       .film-overlay {
         background: linear-gradient(180deg, rgba(0, 0, 0, .36) 0%, transparent 18%, transparent 52%, rgba(0, 0, 0, .55) 76%, rgba(0, 0, 0, .85) 100%);
       }
