@@ -24,7 +24,7 @@
       "@type": "LocalBusiness",
       "name": "Timber Atelier",
       "description": "One-of-one furniture and architectural woodwork, designed and made in Ballito, KwaZulu-Natal.",
-      "email": "studio@timberatelier.co.za",
+      "telephone": "+27603881383",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Ballito",
@@ -392,7 +392,7 @@
       text-transform: uppercase;
       transition: transform .3s ease, background .3s ease, border-color .3s ease, color .3s ease;
     }
-    .button::after { content: "↗"; font-size: .9rem; transition: transform .3s ease; }
+    .button::after { content: "↗\FE0E"; font-size: .9rem; transition: transform .3s ease; }
     .button:hover, .button:focus-visible { transform: translateY(-2px); }
     .button:hover::after, .button:focus-visible::after { transform: translate(2px, -2px); }
     .button-primary { background: var(--paper); color: var(--ink); }
@@ -445,33 +445,32 @@
     @media (max-width: 700px) {
       #journey { height: 360svh; }
       .stage { min-height: 0; }
-      .film-media { top: 5.2rem; bottom: auto; height: 48svh; min-height: 320px; }
-      .film-media picture img, .film-media video { object-fit: contain; }
+      .film-media picture img, .film-media video { object-fit: contain; object-position: center 30%; }
       .film-overlay {
-        background: linear-gradient(180deg, rgba(0, 0, 0, .36) 0%, transparent 16%, transparent 43%, rgba(0, 0, 0, .72) 64%, #000 84%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, .36) 0%, transparent 18%, transparent 52%, rgba(0, 0, 0, .55) 76%, rgba(0, 0, 0, .85) 100%);
       }
-      .chapter { right: 1.25rem; bottom: 5.2rem; left: 1.25rem; top: auto; width: auto; text-align: left; }
-      .chapter h1, .chapter h2 { max-width: 11ch; font-size: clamp(2.75rem, 13.5vw, 4.2rem); line-height: .91; }
-      .chapter p { max-width: 35ch; margin-top: .95rem; font-size: .91rem; line-height: 1.58; }
-      .chapter-kicker { margin-bottom: .75rem; font-size: .6rem; letter-spacing: .18em; }
-      .chapter-intro { bottom: 5rem; }
-      .chapter-intro h1 { max-width: 9ch; }
+      .chapter { right: 1.25rem; bottom: 4.9rem; left: 1.25rem; top: auto; width: auto; text-align: center; }
+      .chapter h1, .chapter h2 { max-width: 13ch; margin-inline: auto; font-size: clamp(2.4rem, 11.5vw, 3.6rem); line-height: .93; }
+      .chapter p { max-width: 36ch; margin-inline: auto; margin-top: .95rem; font-size: .91rem; line-height: 1.58; }
+      .chapter-kicker { justify-content: center; margin-bottom: .8rem; font-size: .6rem; letter-spacing: .18em; }
+      .chapter-kicker::before, .chapter-kicker::after { content: ""; width: 1.6rem; height: 1px; background: currentColor; }
+      .chapter-intro { bottom: 4.9rem; }
+      .chapter-intro h1 { max-width: 10ch; }
       .chapter-intro .intro-note { display: none; }
-      .chapter-two h2, .chapter-two p, .chapter-final h2, .chapter-final p { margin-left: 0; }
-      .chapter-two .chapter-kicker, .chapter-final .chapter-kicker { justify-content: flex-start; }
-      .chapter-final .hero-actions { justify-content: flex-start; }
-      .hero-actions { gap: .65rem; margin-top: 1.25rem; }
+      .chapter-two h2, .chapter-two p, .chapter-final h2, .chapter-final p { margin-inline: auto; }
+      .chapter-two .chapter-kicker, .chapter-final .chapter-kicker { justify-content: center; }
+      .chapter-final .hero-actions { justify-content: center; }
+      .hero-actions { justify-content: center; gap: .65rem; margin-top: 1.35rem; }
       .hero-actions .button { min-height: 48px; padding: .8rem 1.1rem; font-size: .61rem; }
-      .film-loader { top: 4.5rem; bottom: auto; left: 1.25rem; }
-      .scroll-cue { left: 1.25rem; transform: none; }
+      .film-loader { top: 4.6rem; bottom: auto; left: 50%; transform: translateX(-50%); }
     }
     @media (max-width: 359px), (max-height: 700px) and (max-width: 700px) {
       body { min-width: 0; }
-      .film-media { top: 4.25rem; height: 43svh; min-height: 260px; }
-      .chapter { bottom: 4.4rem; }
-      .chapter h1, .chapter h2 { font-size: clamp(2.35rem, 12.5vw, 3.2rem); }
-      .chapter p { font-size: .83rem; }
-      .chapter-intro { bottom: 4.25rem; }
+      .film-media picture img, .film-media video { object-position: center 26%; }
+      .chapter { bottom: 4.3rem; }
+      .chapter h1, .chapter h2 { font-size: clamp(2.05rem, 10.5vw, 2.9rem); }
+      .chapter p { font-size: .84rem; }
+      .chapter-intro { bottom: 4.3rem; }
       .scroll-cue { bottom: 1rem; }
     }
     @media (max-height: 520px) and (min-width: 701px) {
@@ -604,7 +603,7 @@
       transition: background .35s ease, color .35s ease;
     }
     .capability::after {
-      content: "↗";
+      content: "↗\FE0E";
       position: absolute;
       right: 2rem;
       bottom: 1.65rem;
@@ -1174,8 +1173,8 @@
             <input id="name" name="name" autocomplete="name" placeholder="Name" required>
           </div>
           <div class="field">
-            <label for="email">Your email</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <label for="whatsapp">Your WhatsApp number</label>
+            <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+27 60 123 4567" required>
           </div>
           <div class="field field-full">
             <label for="project">What are we making?</label>
@@ -1194,13 +1193,13 @@
             <textarea id="message" name="message" placeholder="The room, rough size, material you love—or simply the idea." required></textarea>
           </div>
           <div class="form-actions">
-            <button class="button form-submit" type="submit">Compose enquiry</button>
-            <p class="form-note">This opens your email app with the details ready. Or write directly to <a href="mailto:studio@timberatelier.co.za">studio@timberatelier.co.za</a>.</p>
+            <button class="button form-submit" type="submit">Send via WhatsApp</button>
+            <p class="form-note">This opens WhatsApp with your enquiry ready. Nothing is sent until you tap Send in WhatsApp.</p>
           </div>
           <div class="enquiry-ready" id="enquiry-ready" role="status" hidden>
-            <p><strong>Your enquiry is ready.</strong> If your email app did not open, use either option below—your form will remain here.</p>
+            <p><strong>Your enquiry is ready.</strong> If WhatsApp did not open, use either option below—your form will remain here.</p>
             <div class="ready-actions">
-              <a id="ready-email" href="mailto:studio@timberatelier.co.za">Open email again</a>
+              <a id="ready-whatsapp" href="https://wa.me/27603881383" target="_blank" rel="noopener">Open WhatsApp again</a>
               <button id="copy-enquiry" type="button">Copy enquiry</button>
               <span class="copy-status" id="copy-status" aria-live="polite"></span>
             </div>
@@ -1214,7 +1213,7 @@
     <div class="shell footer-main">
       <p class="footer-brand">Timber <em style="color: var(--brass)">Atelier</em></p>
       <div class="footer-links">
-        <a href="mailto:studio@timberatelier.co.za">studio@timberatelier.co.za</a>
+        <a href="https://wa.me/27603881383" target="_blank" rel="noopener">WhatsApp the atelier</a>
         <a href="#commission">Start a commission</a>
         <span style="color: rgba(244,238,228,.45); font-size:.82rem">Ballito, KwaZulu-Natal · South Africa</span>
       </div>
@@ -1226,7 +1225,7 @@
   </footer>
 
   <a class="mobile-bar" href="#commission" aria-label="Start a commission">
-    <span>Start a commission</span><i aria-hidden="true">↗</i>
+    <span>Start a commission</span><i aria-hidden="true">↗&#xFE0E;</i>
   </a>
 
   <script>
@@ -1292,27 +1291,29 @@
 
       const commissionForm = document.getElementById("commission-form");
       const enquiryReady = document.getElementById("enquiry-ready");
-      const readyEmail = document.getElementById("ready-email");
+      const readyWhatsApp = document.getElementById("ready-whatsapp");
       const copyEnquiry = document.getElementById("copy-enquiry");
       const copyStatus = document.getElementById("copy-status");
 
       commissionForm.addEventListener("submit", event => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        const subject = `Commission enquiry · ${data.get("project")}`;
-        const body = [
+        const enquiry = [
+          `*Timber Atelier commission enquiry*`,
+          "",
           `Name: ${data.get("name")}`,
-          `Email: ${data.get("email")}`,
+          `WhatsApp: ${data.get("whatsapp")}`,
           `Project: ${data.get("project")}`,
           "",
+          "Idea:",
           data.get("message")
         ].join("\n");
-        const mailto = `mailto:studio@timberatelier.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        readyEmail.href = mailto;
-        copyEnquiry.dataset.enquiry = `${subject}\n\n${body}`;
+        const whatsappUrl = `https://wa.me/27603881383?text=${encodeURIComponent(enquiry)}`;
+        readyWhatsApp.href = whatsappUrl;
+        copyEnquiry.dataset.enquiry = enquiry;
         copyStatus.textContent = "";
         enquiryReady.hidden = false;
-        location.href = mailto;
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
       });
 
       copyEnquiry.addEventListener("click", async () => {
